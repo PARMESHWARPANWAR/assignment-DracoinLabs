@@ -19,6 +19,10 @@ module.exports = function override(config) {
       process: "process/browser",
       Buffer: ["buffer", "Buffer"],
     }),
+ 
+    new webpack.IgnorePlugin({
+      resourceRegExp: /^(@base-org\/account|@coinbase\/wallet-sdk|@metamask\/connect-evm|@safe-global\/safe-apps-sdk|@safe-global\/safe-apps-provider|@walletconnect\/ethereum-provider)$/,
+    }),
   ]);
   return config;
 };
